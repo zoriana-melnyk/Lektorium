@@ -1,0 +1,96 @@
+/*total style*/
+
+.dice{
+  list-style: none; /* clear list marker */
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  border: solid 5px #000;
+  border-radius: 20px;
+  box-sizing: border-box; /* change algoritm bloc-model */
+  display: inline-flex;
+  vertical-align: top;
+  margin: 5px;
+}
+
+.dice_point::before{ /* use this method for a point so that it is not flexible */
+  content: ""; /* for reflection pseudo elements we should add content */
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+/*first dice*/
+
+.dice_one{
+  justify-content: center;
+  align-items: center;
+}
+
+/*two dice*/
+
+.dice_two{
+  justify-content: space-between; /* alignment on the sides */
+}
+
+.dice_two .dice_point:nth-child(1){
+  /* change position on one of two elements */
+  align-self: flex-end;
+}
+
+/*three dice*/
+
+.dice_three{
+  justify-content: space-between; 
+}
+
+.dice_three .dice_point:nth-child(1){
+  align-self: flex-end;
+}
+
+.dice_three .dice_point:nth-child(2){
+  align-self: center;
+}
+
+/*four dice*/
+
+.dice_four{
+  flex-wrap: wrap; /* give permission for transfer */
+  justify-content: space-between; /* placement on the main axis */
+  align-content: space-between;
+}
+
+.dice_four .dice_point{
+  /* to accommodate only 2 el*/
+  width: 50%;
+}
+
+/* to selectrefer only pairs elements */
+
+.dice_four .dice_point:nth-child(even){
+  text-align: right;
+}
+
+/*five dice*/
+
+.dice_five{
+  flex-wrap: wrap; 
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.dice_five .dice_point:nth-child(3){
+  width: 100%;
+  text-align: center;
+}
+
+.dice_six{
+  /* in order to rotate the main axis */
+  flex-flow: wrap column;
+  justify-content: space-between; 
+  align-content: space-between;
+}
+
+
